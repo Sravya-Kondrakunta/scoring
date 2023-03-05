@@ -11,14 +11,14 @@ async function main(content){
     pkg = pyodide.pyimport("grading");
 
     let result_ = await pkg.show_results_clearly(content)
-    result = JSON.parse(result_)
+    result__ = JSON.parse(result_)
     // console.log(JSON.parse(result))
-    load_students(result)
+    load_students(result__)
 
-    let summ = await pkg.get_summary(result_)
+    let summ = await pkg.get_summary(result__)
     summary(summ)
 
-    let email_missing = await pkg.get_missing(result_)
+    let email_missing = await pkg.get_missing(result__)
     emails(email_missing)
 }
 
