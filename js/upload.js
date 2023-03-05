@@ -15,10 +15,10 @@ async function main(content){
     // console.log(JSON.parse(result))
     load_students(result__)
 
-    let summ = await pkg.get_summary(result__)
+    let summ = await pkg.get_summary(result_)
     summary(summ)
 
-    let email_missing = await pkg.get_missing(result__)
+    let email_missing = await pkg.get_missing(result_)
     emails(email_missing)
 }
 
