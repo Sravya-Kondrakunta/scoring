@@ -85,7 +85,7 @@ function display_code(i) {
     content += summary_results + "<br>"
     content += "<h4><b> Emails of Missing Assignments: </b></h4>"
     content += "<pre><code>"
-    content += missing_emails
+    content += missing_emails + "\n\n"
     content += "</pre></code>" + "<br><br>"
 
     content += '<link rel="stylesheet" href="css/style1.css" /> \
