@@ -13,7 +13,6 @@ console.log(missing_emails)
 }
 
 function make_csv_data(input) {
-console.log(input)
 csv_data = "student_id,email_id,feedback,score\n"
 for (const [key, value] of Object.entries(input)) {
   email_id = key+"@stolaf.edu"
@@ -157,7 +156,6 @@ function gatherResults (form_id) {
 
 function get_feedback(i) {
 
-    var result;
     // feedback
     feedback_value = ""
     score_value = ""
@@ -167,7 +165,6 @@ function get_feedback(i) {
             {
                 feedback_value = result[student][0]
                 score_value = result[student][1]
-                console.log(feedback_value + "; " + score_value)
             }
      if (feedback_value == "")
         textarea = '<textarea class="form-control" name="feedback", type="text" placeholder="Please enter your feedback here" style="height: 10rem;" data-sb-validations="required"></textarea>'
