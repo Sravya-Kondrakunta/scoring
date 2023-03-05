@@ -163,6 +163,8 @@ function gatherResults (form_id) {
     // change color to green
     document.getElementById(form_id+"_student").style.color = "#006400";
     document.getElementById(form_id+"_student").style.fontWeight = 'bold';
+
+    return false
 }
 
 function get_feedback(i) {
@@ -183,7 +185,7 @@ function get_feedback(i) {
         textarea = '<textarea class="form-control" name="feedback", type="text" placeholder="Please enter your feedback here" style="height: 10rem;" data-sb-validations="required">'+feedback_value+'</textarea>'
 
      content = '<h4><b> Feedback : </b></h4> \
-                <form id='+ student +' name='+ student +' action=""> \
+                <form id='+ student +' name='+ student +' action="" onsubmit="return gatherResults(\'' + student + '\')"> \
                       <!-- Message input --> \
                       <div class="mb-3"> \
                       '+textarea+' \
