@@ -7,6 +7,18 @@ function summary(input) {
 summary_results = input
 }
 
+function escapeHtml(text) {
+  var map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+
+  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
+
 function emails(input) {
 missing_emails = input
 }
@@ -131,12 +143,12 @@ function get_code(codes, text) {
 
     for (let j = 0; j < codes['header'].length; j++){
         if (text == "code")
-            content += "<h4> File Name: " + codes['header'][j] + "\n" + "</h4>"
+            content += "File Name: " + escapeHtml(codes['header'][j] + "\n") + ""
         else
-            content += "\n" + "<h4> " + codes['header'][j] + "\n" + "</h4>"
+            content +=  escapeHtml("\n" + codes['header'][j] + "\n")
 
         for (let k = 0; k < codes['message'][j].length; k++)
-        content +=  codes['message'][j][k] + "\n"
+        content +=  escapeHtml(codes['message'][j][k] + "\n")
     }
     return content
    }
