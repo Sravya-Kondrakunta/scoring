@@ -4,7 +4,7 @@ async function main(content){
     await pyodide.loadPackage("pandas");
     await pyodide.runPythonAsync(`
         from pyodide.http import pyfetch
-        response = await pyfetch("http://localhost:63342/grading/website/python/grading.py")
+        response = await pyfetch("https://raw.githubusercontent.com/Sravya-Kondrakunta/scoring/main/python/grading.py")
         with open("grading.py", "wb") as f:
             f.write(await response.bytes())
     `)
