@@ -9,7 +9,6 @@ summary_results = input
 
 function emails(input) {
 missing_emails = input
-console.log(missing_emails)
 }
 
 function make_csv_data(input) {
@@ -69,7 +68,7 @@ function display_code(i) {
                     <label for="file-input"> \
                                   <i class="fa-solid fa-arrow-up-from-bracket"></i> \
                                   Choose File To Upload \
-                                </label> \
+                    </label> \
                     <div id="num-of-files">No Files Choosen</div> \
                     <ul id="files-list"></ul> \
                   '
@@ -171,7 +170,7 @@ function get_feedback(i) {
      else
         textarea = '<textarea class="form-control" name="feedback", type="text" placeholder="Please enter your feedback here" style="height: 10rem;" data-sb-validations="required">'+feedback_value+'</textarea>'
 
-     content = ' <h4><b> Feedback : </b></h4> \
+     content = '<h4><b> Feedback : </b></h4> \
                 <form id='+ student +' name='+ student +' action=""> \
                       <!-- Message input --> \
                       <div class="mb-3"> \
