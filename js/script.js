@@ -180,9 +180,9 @@ function get_feedback(i) {
                 score_value = result[student][1]
             }
      if (feedback_value == "")
-        textarea = '<textarea class="form-control" name="feedback", type="text" placeholder="Please enter your feedback here" style="height: 10rem;" data-sb-validations="required"></textarea>'
+        textarea = '<textarea class="form-control" name="feedback", type="text" placeholder="Please enter your feedback here" style="height: 10rem; color: darkblue" data-sb-validations="required"></textarea>'
      else
-        textarea = '<textarea class="form-control" name="feedback", type="text" placeholder="Please enter your feedback here" style="height: 10rem;" data-sb-validations="required">'+feedback_value+'</textarea>'
+        textarea = '<textarea class="form-control" name="feedback", type="text" placeholder="Please enter your feedback here" style="height: 10rem; color: darkblue" data-sb-validations="required">'+feedback_value+'</textarea>'
 
      content = '<h4><b> Feedback : </b></h4> \
                 <form id='+ student +' name='+ student +' action="" onsubmit="return gatherResults(\'' + student + '\')"> \
@@ -191,7 +191,7 @@ function get_feedback(i) {
                       '+textarea+' \
                       </div> \
                       <div class="mb-3"> \
-                        <input style="color: #f00;" class="form-control" type="number" name="score" value="'+score_value+'" placeholder="Your score here" data-sb-validations="required" /> \
+                        <input style="color: darkred;" class="form-control" type="number" name="score" value="'+score_value+'" placeholder="Your score here" data-sb-validations="required" /> \
                       </div> \
                       <!-- Form submit button --> \
                       <div class="d-grid"> \
