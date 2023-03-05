@@ -58,7 +58,7 @@ function get_students(student, i) {
      '<li "class="tooltip-element" data-tooltip="'+i+'"> \
           <a id='+student+'_student href="#", class="active" data-active="'+i+'"> \
             <div class="icon"> \
-              <i class="bx bxs-folder"></i> \
+              <i class="fa-solid fa fa-user"></i> \
             </div> \
             <span class="link hide">'+ student +'</span> \
           </a> \
@@ -233,7 +233,7 @@ function load_students(input) {
      '<li class="tooltip-element" data-tooltip="'+i+'"> \
           <a href="#", class="active" data-active="'+i+'"> \
             <div class="icon"> \
-              <i class="bx bxs-folder"></i> \
+              <i class="fa-solid fa fa-download"></i> \
             </div> \
             <span class="link hide">Download</span> \
           </a> \
