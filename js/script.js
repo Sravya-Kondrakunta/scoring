@@ -1,3 +1,4 @@
+var result = {}
 var data = {}
 var summary_results = ""
 var missing_emails = ""
@@ -11,9 +12,10 @@ missing_emails = input
 console.log(missing_emails)
 }
 
-function make_csv_data(result) {
+function make_csv_data(input) {
+console.log(input)
 csv_data = "student_id,email_id,feedback,score\n"
-for (const [key, value] of Object.entries(result)) {
+for (const [key, value] of Object.entries(input)) {
   email_id = key+"@stolaf.edu"
   csv_data += key+","+email_id+","+value[0]+","+value[1]+"\n"
 }
@@ -151,12 +153,11 @@ function gatherResults (form_id) {
     // change color to green
     document.getElementById(form_id+"_student").style.color = "#006400";
     document.getElementById(form_id+"_student").style.fontWeight = 'bold';
-
-
 }
 
 function get_feedback(i) {
 
+    var result;
     // feedback
     feedback_value = ""
     score_value = ""
@@ -206,7 +207,7 @@ function load_students(input) {
 
    data = input
 
-    var result = {}
+    result = {}
     var stored = localStorage['result'];
     if (stored) result = JSON.parse(stored);
     else result = {};
