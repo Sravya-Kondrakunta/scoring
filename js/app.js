@@ -44,3 +44,4 @@ tooltip_elements.forEach((elem) => {
 }
 
 overall();
+document.getElementById('0').click();
