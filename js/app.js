@@ -9,9 +9,6 @@ const active_tab = document.querySelector(".active-tab");
 const shortcuts = document.querySelector(".sidebar-links h4");
 const tooltip_elements = document.querySelectorAll(".tooltip-element");
 
-
-
-
 function moveActiveTab() {
   let topPosition = activeIndex * 58 + 2.5;
   active_tab.style.top = `${topPosition}px`;
