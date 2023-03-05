@@ -20,6 +20,8 @@ async function main(content){
 
     let email_missing = await pkg.get_missing(result_)
     emails(email_missing)
+
+    return true
 }
 
 function getFile(event) {
