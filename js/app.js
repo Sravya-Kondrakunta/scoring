@@ -41,4 +41,32 @@ tooltip_elements.forEach((elem) => {
 }
 
 overall();
+
+// if cached use it to startup
+var stored = localStorage['python_results'];
+if (stored) {
+    result__ = JSON.parse(stored)
+    summ = localStorage.getItem('summ')
+    email_missing = localStorage.getItem('email_missing')
+
+    load_students(result__)
+    summary(summ)
+    emails(email_missing)
+ }
+var stored = localStorage['result'];
+if (stored)
+    {
+    result = JSON.parse(stored);
+    for (const [key, value] of Object.entries(result)) {
+        student = key + "_student"
+        console.log(student)
+        if (value[0] == "") {
+            document.getElementById(student).click();
+            break
+            }
+    }
+    }
+else
+{
 document.getElementById('0').click();
+}
