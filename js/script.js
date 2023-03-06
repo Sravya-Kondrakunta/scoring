@@ -24,8 +24,10 @@ missing_emails = input
 }
 
 function make_csv_data(input) {
-csv_data = "student_id,email_id,feedback,score\n"
+csv_data = "student_id,email_id,score,feedback,\n"
+
 for (const [key, value] of Object.entries(input)) {
+  console.log(key, value)
   email_id = key+"@stolaf.edu"
   csv_data += key+","+email_id+","+value[0]+","+value[1]+"\n"
 }
@@ -157,7 +159,7 @@ function gatherResults (form_id) {
     form = document.getElementById(form_id)
     var feedback = form.feedback.value;
     var score = form.score.value;
-    result[form_id] = [feedback, score]
+    result[form_id] = [score, feedback]
     localStorage['result'] = JSON.stringify(result)
 
     // change color to green
@@ -176,8 +178,8 @@ function get_feedback(i) {
      if (result != null)
         if (result[student] != null)
             {
-                feedback_value = result[student][0]
-                score_value = result[student][1]
+                feedback_value = result[student][1]
+                score_value = result[student][0]
             }
      if (feedback_value == "")
         textarea = '<textarea class="form-control" name="feedback", type="text" placeholder="Please enter your feedback here" style="height: 10rem; color: darkblue" data-sb-validations="required"></textarea>'
@@ -199,7 +201,6 @@ function get_feedback(i) {
                       </div> \
                 </form> \
                 '
-
     var node = document.getElementById('feedback')
     node.innerHTML = content
 }
@@ -217,17 +218,22 @@ function load_students(input) {
 
    data = input
 
-    result = {}
     var stored = localStorage['result'];
     if (stored) result = JSON.parse(stored);
     else result = {};
 
-    content = ""
-    for (let i = 0; i < data['student_name'].length; i++) {
-     student = data['student_name'][i]
-     content += get_students(student, i)
-     }
 
+    content = ""
+    data_store = {}
+    for (let i = 0; i < data['student_name'].length; i++) {
+        student = data['student_name'][i]
+        data_store[student] = ["", ""]
+        content += get_students(student, i)
+     }
+     if(result
+            && Object.keys(result).length === 0
+            && Object.getPrototypeOf(result) === Object.prototype)
+        result = data_store
      i = data['student_name'].length + 1
      content +=
      '<li class="tooltip-element" data-tooltip="'+i+'"> \
@@ -242,6 +248,17 @@ function load_students(input) {
     var node = document.getElementById('student')
     node.innerHTML += content
 
+    if ((result != {}) && (result != null)){
+        for (let i = 0; i < data['student_name'].length; i++) {
+                student = data['student_name'][i]
+                score_value = result[student][0]
+                if (score_value){
+                    // change color to green
+                    document.getElementById(student+"_student").style.color = "#006400";
+                    document.getElementById(student+"_student").style.fontWeight = 'bold';
+                }
+            }
+        }
     overall();
 }
 
