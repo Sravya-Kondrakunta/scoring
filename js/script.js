@@ -62,7 +62,7 @@ function get_students(student, i) {
             <div class="icon"> \
               <i class="fa-solid fa fa-user"></i> \
             </div> \
-            <span class="link hide">'+ student +'</span> \
+            <span class="link hide">'+i+'. '+ student +'</span> \
           </a> \
      </li>'
     return content
