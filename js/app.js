@@ -59,7 +59,6 @@ if (stored)
     result = JSON.parse(stored);
     for (const [key, value] of Object.entries(result)) {
         student = key + "_student"
-        console.log(student)
         if (value[0] == "") {
             document.getElementById(student).click();
             break
