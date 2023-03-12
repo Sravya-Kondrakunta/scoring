@@ -52,7 +52,6 @@ if (stored) {
     load_students(result__)
     summary(summ)
     emails(email_missing)
- }
 var stored = localStorage['result'];
 if (stored)
     {
@@ -65,6 +64,10 @@ if (stored)
             }
     }
     }
+else
+    document.getElementById(result__['student_name'][0] + "_student").click();
+
+   }
 else
 {
 document.getElementById('0').click();
