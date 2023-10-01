@@ -10,14 +10,14 @@ def get_code(lines):
     code_file = ""
     flag = False
     for line in lines:
-        if "##" in line and ".cpp" in line:
+        if "##" in line and ((".py" in line) or (".cpp" in line)):
             code_file = line.replace("## ", "")
             continue
 
         elif not code_file:
             continue
 
-        elif "```cpp" in line:
+        elif ("```cpp" in line) or ("```py" in line):
             code_lines += [line]
 
         elif "```" in line:
@@ -45,7 +45,7 @@ def get_warnings(lines):
     warnings_file = ""
     flag = False
     for line in lines:
-        if "**warnings:" in line and ".cpp" in line:
+        if "**warnings:" in line and ((".py" in line) or (".cpp" in line)):
             warnings_file = line.replace("**", "")
             continue
 
@@ -84,7 +84,7 @@ def get_results(lines):
     results_file = ""
     flag = False
     for line in lines:
-        if "**results of " in line and ".cpp" in line:
+        if "**results of " in line and ((".py" in line) or (".cpp" in line)):
             results_file = line.replace("**results of ", "")
             continue
 
