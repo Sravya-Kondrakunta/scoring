@@ -32,7 +32,6 @@ for (const [key, value] of Object.entries(input)) {
   feedback = value[1].includes("\n") ? `"${value[1]}"` : value[1]; // Enclose in double quotes if contains newline
   csv_data += key + "," + email_id + "," + value[0] + "," + feedback + "\n";
   }
-}
 return csv_data
 }
 
