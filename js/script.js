@@ -29,7 +29,9 @@ csv_data = "student_id,email_id,score,feedback,\n"
 for (const [key, value] of Object.entries(input)) {
   console.log(key, value)
   email_id = key+"@stolaf.edu"
-  csv_data += key+","+email_id+","+value[0]+","+value[1]+"\n"
+  feedback = value[1].includes("\n") ? `"${value[1]}"` : value[1]; // Enclose in double quotes if contains newline
+  csv_data += key + "," + email_id + "," + value[0] + "," + feedback + "\n";
+  }
 }
 return csv_data
 }
